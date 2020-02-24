@@ -1,0 +1,24 @@
+.card {
+  border: none;
+  -webkit-box-shadow: 0 0 35px 0 rgba(154,161,171,.15);
+  box-shadow: 0 0 35px 0 rgba(154,161,171,.15);
+  margin-bottom: 24px;
+  background-color: #fff;
+  border-radius: .8rem;
+}
+.card p {
+  margin-top: 0;
+}
+
+.card-body {
+  min-height: 1px;
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin-bottom: .75rem;
+}
+
+.card-footer {
+  display: block;
+}
