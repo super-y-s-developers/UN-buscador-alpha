@@ -1,0 +1,58 @@
+.badge {
+  display: inline-block;
+  text-align: center;
+  border-radius: 10rem;
+  padding: 0.15em 0.8em;
+  white-space: nowrap;
+  vertical-align: baseline;
+  color: white;
+  font-size: 0.83em;
+  font-weight: bold;
+  margin-bottom: 01rem;
+
+  -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s;
+
+  background-color: var(--secondary);
+}
+.badge.outlined {
+  background-color: transparent !important;
+  border: 2px solid var(--gray);
+  color: var(--secondary);
+}
+
+.badge.blue { background-color: var(--blue); }
+.badge.purple { background-color: var(--purple); }
+.badge.pink { background-color: var(--pink); }
+.badge.red { background-color: var(--red); }
+.badge.orange { background-color: var(--orange); }
+.badge.yellow { background-color: var(--yellow); }
+.badge.green { background-color: var(--green); }
+.badge.teal { background-color: var(--teal); }
+.badge.cyan { background-color: var(--cyan); }
+.badge.gray { background-color: var(--gray); }
+.badge.light { background-color: var(--light); }
+.badge.dark { background-color: var(--dark); }
+.badge.gray-dark { background-color: var(--gray-dark); }
+.badge.indigo { background-color: var(--indigo); }
+.badge.primary { background-color: var(--primary); }
+.badge.secondary { background-color: var(--secondary); }
+
+.badge.outlined.blue { border-color: var(--blue); color: var(--blue) }
+.badge.outlined.purple { border-color: var(--purple); color: var(--purple) }
+.badge.outlined.pink { border-color: var(--pink); color: var(--pink) }
+.badge.outlined.red { border-color: var(--red); color: var(--red) }
+.badge.outlined.orange { border-color: var(--orange); color: var(--orange) }
+.badge.outlined.yellow { border-color: var(--yellow); color: var(--yellow) }
+.badge.outlined.green { border-color: var(--green); color: var(--green) }
+.badge.outlined.teal { border-color: var(--teal); color: var(--teal) }
+.badge.outlined.cyan { border-color: var(--cyan); color: var(--cyan) }
+.badge.outlined.gray { border-color: var(--gray); color: var(--gray) }
+.badge.outlined.light { border-color: var(--light); color: var(--light) }
+.badge.outlined.dark { border-color: var(--dark); color: var(--dark) }
+.badge.outlined.gray-dark { border-color: var(--gray-dark); color: var(--gray-dark) }
+.badge.outlined.indigo { border-color: var(--indigo); color: var(--indigo) }
+.badge.outlined.primary { border-color: var(--primary); color: var(--primary) }
+.badge.outlined.secondary { border-color: var(--secondary); color: var(--secondary) }
