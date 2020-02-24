@@ -1,0 +1,34 @@
+.day-radio {
+  position: relative;
+}
+
+.day-radio label {
+  color: var(--gray);
+  font-weight: bold;
+}
+
+input[type=checkbox].day-radio {
+  margin: 0 !important;
+  padding: 0 !important;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 1.7rem;
+  height: 1.7rem;
+
+  background-color: var(--white);
+	border: solid 2px var(--gray);
+	border-radius: 10rem;
+  outline: none;
+}
+
+input[type=checkbox]:checked.day-radio {
+  background-color: var(--gray);
+}
+.day-radio.checked label {
+  color: white !important;
+}
+
+.day-radio input[type=checkbox]:after {
+  display: none;
+}
