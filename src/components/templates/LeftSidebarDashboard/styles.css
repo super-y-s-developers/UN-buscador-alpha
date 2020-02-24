@@ -1,0 +1,46 @@
+.dashboard {
+  width: 100vw;
+}
+
+.dashboard .sidebar {
+  width: 25%;
+  height: 100vh;
+  position: fixed;
+  border-radius: 0 2em 2em 0;
+  background-color: var(--primary);
+  color: white;
+}
+.dashboard .sidebar .sidebar-body {
+  padding: 15%;
+}
+
+.dashboard .content {
+  width: 75%;
+  height: 100%;
+  min-height: 100vh;
+  margin-left: auto;
+  background-color: var(--background);
+}
+.dashboard .content .content-body {
+  padding: 5% 15%;
+}
+
+
+/* Filters organism */
+.filters {
+  display: flex;
+  margin-bottom: 2em;
+}
+.filters-item {
+  margin-right: 2em;
+}
+
+select {
+  background-color: transparent;
+  color: var(--secondary);
+  font-family: var(--base-font-family);
+  border: none;
+}
+select:focus {
+  outline:none;
+}

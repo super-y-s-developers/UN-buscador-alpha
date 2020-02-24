@@ -1,13 +1,67 @@
 import React from 'react';
+import courses from 'data/courses';
+import { connect } from "react-redux";
+import actions from "services/actions";
 
-// Atoms
+// Organisms
+import CourseList from 'components/organisms/CourseList';
 
-function App() {
-  return (
-    <div>
-      Holi
-    </div>
-  );
+// Templates
+import LeftSidebarDashboard from 'components/templates/LeftSidebarDashboard';
+
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      filters: {
+        career: 0
+      },
+      selectedCourse: null
+    }
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleCourseSelection = this.handleCourseSelection.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.fetchCourses();
+    this.props.fetchCareers();
+  }
+
+  handleInputChange(e) {
+    const value = e.target.value;
+    this.setState({
+      filters: { career: value }
+    });
+  }
+
+  handleCourseSelection(courseId) {
+    console.log(courseId);
+    this.setState({
+      selectedCourse: courseId
+    });
+  }
+
+  render() {
+    console.log(this.state.selectedCourse);
+    const filteredCourses = this.props.careers.length>0 &&
+      Object.values(this.props.careers[this.state.filters.career].courses);
+
+    return (
+      <>
+        <LeftSidebarDashboard
+          courses={filteredCourses}
+          careers={this.props.careers}
+          handleInputChange={this.handleInputChange}
+          handleCourseSelection={this.handleCourseSelection}
+          selectedCourse={this.state.selectedCourse}
+        />
+      </>
+    );
+  }
 }
 
-export default App;
+
+const mapStateToProps = ({ courses, careers }) => { return { courses, careers } };
+export default connect(mapStateToProps, actions)(App);
