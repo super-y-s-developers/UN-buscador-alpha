@@ -20,6 +20,7 @@
   --indigo: #727cf5;
   --secondary: #6c757d;
   --primary: var(--indigo);
+  --background: #fbfbfb;
 
   /*
   * Fonts
