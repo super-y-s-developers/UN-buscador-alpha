@@ -1,10 +1,11 @@
 import React from 'react';
+// import './styles.css';
 
-function Title() {
+function Title(props) {
   return (
-    <div>
-      Holi
-    </div>
+    <h3>
+      {props.children}
+    </h3>
   );
 }
 
