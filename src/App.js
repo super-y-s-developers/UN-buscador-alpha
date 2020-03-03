@@ -6,8 +6,8 @@ import actions from "services/actions";
 // Organisms
 import CourseList from 'components/organisms/CourseList';
 
-// Templates
-import LeftSidebarDashboard from 'components/templates/LeftSidebarDashboard';
+// Pages
+import Dashboard from 'components/pages/Dashboard';
 
 
 class App extends React.Component {
@@ -25,7 +25,6 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchCourses();
     this.props.fetchCareers();
   }
 
@@ -50,7 +49,7 @@ class App extends React.Component {
 
     return (
       <>
-        <LeftSidebarDashboard
+        <Dashboard
           courses={filteredCourses}
           careers={this.props.careers}
           handleInputChange={this.handleInputChange}

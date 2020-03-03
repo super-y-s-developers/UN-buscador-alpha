@@ -1,9 +1,11 @@
 import React from 'react';
 import './styles.css';
+import { firstToUpperCase } from 'services/helpers';
 
 import Card from 'components/atoms/Card';
 import Title from 'components/atoms/Title';
 import Badge from 'components/atoms/Badge';
+
 
 function CourseCard(props) {
   const { name, typologie, id, credits, favorite } = props;
@@ -16,7 +18,7 @@ function CourseCard(props) {
     <Card className='course-card' onClick={() => props.onClick(id)}>
       <span className='card-header'>
         {name &&
-          <p>{name.toLowerCase()}</p>
+          <p>{firstToUpperCase(name)}</p>
         }
 
         <i className='icon' onClick={handleFavoriteClick}>
