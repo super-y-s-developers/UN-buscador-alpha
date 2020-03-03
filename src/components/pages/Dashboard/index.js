@@ -29,9 +29,9 @@ function Dashboard(props) {
 
           {props.selectedCourse != null ?
             <>
-            <Title>{selectedCourseData.name}</Title>
-            <Subtitle>Descripción:</Subtitle>
-            <p>{selectedCourseData.description.split('.').slice(0,2).join('. ')}.</p>
+              <Title>{selectedCourseData.name}</Title>
+              <Subtitle>Descripción:</Subtitle>
+              <p>{selectedCourseData.description.split('.').slice(0,2).join('. ')}.</p>
             </>
             :
             <Title>Selecciona un curso de la lista para ver los horarios y detalles aquí</Title>
@@ -54,7 +54,7 @@ function Dashboard(props) {
               <InputTitle>Carrera</InputTitle>
               <select id="careers" onChange={props.handleInputChange}>
               {props.careers.map((c, index) =>
-                <option value={index}>{c.name}</option>
+                <option key={c.id} value={index}>{c.name}</option>
               )}
               </select>
             </div>
@@ -63,6 +63,7 @@ function Dashboard(props) {
           <CourseList
             data={props.courses}
             handleCourseSelection={props.handleCourseSelection}
+            selectedCourse={props.selectedCourse}
           />
 
           </div>

@@ -36,9 +36,9 @@ class App extends React.Component {
   }
 
   handleCourseSelection(courseId) {
-    console.log(courseId);
+    const { selectedCourse } = this.state;
     this.setState({
-      selectedCourse: courseId
+      selectedCourse: selectedCourse != courseId ? courseId : null
     });
   }
 

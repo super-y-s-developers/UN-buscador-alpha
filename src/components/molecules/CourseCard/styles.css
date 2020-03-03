@@ -5,6 +5,11 @@
 .course-card:hover {
   transform: translate(0, -2px);
 }
+.course-card.selected {
+  border: 2px solid var(--primary);
+  margin-left: -4px;
+  margin-top: -4px;
+}
 
 .course-card .card-header  {
   display: flex;
