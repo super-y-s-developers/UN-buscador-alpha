@@ -7,6 +7,7 @@ import Searchbox from 'components/atoms/Searchbox';
 import Title from 'components/atoms/Title';
 import Subtitle from 'components/atoms/Subtitle';
 import Loader from 'components/atoms/Loader';
+import Icon from 'components/atoms/Icon';
 
 // Organisms
 import CourseList from 'components/organisms/CourseList';
@@ -43,6 +44,11 @@ function Dashboard(props) {
 
         <div className='content'>
           <div className='content-body'>
+
+          <Title>
+            <Icon type='search' color='primary' />
+            UN Buscador
+          </Title>
 
           <div className='filters'>
             <div className='filters-item'>
