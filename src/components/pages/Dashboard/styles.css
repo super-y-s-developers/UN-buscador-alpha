@@ -18,6 +18,9 @@
 .dashboard .sidebar .sidebar-body {
   padding: 15%;
 }
+.dashboard .sidebar .buttons {
+  display: flex;
+}
 
 .dashboard .content {
   width: 77%;
@@ -27,6 +30,10 @@
 }
 .dashboard .content .content-body {
   padding: 5% 8%;
+}
+
+.dashboard .content h1 {
+  text-align: center;
 }
 
 

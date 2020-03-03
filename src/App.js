@@ -20,7 +20,7 @@ class App extends React.Component {
       selectedCourse: null
     }
 
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
     this.handleCourseSelection = this.handleCourseSelection.bind(this);
   }
 
@@ -28,7 +28,7 @@ class App extends React.Component {
     this.props.fetchCareers();
   }
 
-  handleInputChange(e) {
+  handleFilterChange(e) {
     const value = e.target.value;
     this.setState({
       selectedCourse: null,
@@ -49,10 +49,9 @@ class App extends React.Component {
 
     return (
       <Dashboard
-      courses={filteredCourses}
         courses={filteredCourses}
         careers={this.props.careers}
-        handleInputChange={this.handleInputChange}
+        handleFilterChange={this.handleFilterChange}
         handleCourseSelection={this.handleCourseSelection}
         selectedCourse={this.state.selectedCourse}
       />

@@ -27,6 +27,12 @@ function Dashboard(props) {
         <>
         <div className='sidebar'>
           <div className='sidebar-body'>
+          {
+            // <div className='buttons'>
+            //   <button className='button'>Filtros</button>
+            //   <button className='button'>Detalle del curso</button>
+            // </div>
+          }
 
           {props.selectedCourse != null ?
             <>
@@ -44,33 +50,34 @@ function Dashboard(props) {
 
         <div className='content'>
           <div className='content-body'>
+            <h1>
+              <Icon type='search' color='primary' />
+              UN Buscador
+            </h1>
 
-          <Title>
-            <Icon type='search' color='primary' />
-            UN Buscador
-          </Title>
+            <div className='filters'>
+              {
+                // <div className='filters-item'>
+                //   <InputTitle>Busca por nombre o código</InputTitle>
+                //   <Searchbox id='searchbox'></Searchbox>
+                // </div>
+              }
 
-          <div className='filters'>
-            <div className='filters-item'>
-              <InputTitle>Busca por nombre o código</InputTitle>
-              <Searchbox id='searchbox'></Searchbox>
+              <div className='filters-item'>
+                <InputTitle>Filtrar por carrera</InputTitle>
+                <select id="careers" onChange={props.handleFilterChange}>
+                  {props.careers.map((c, index) =>
+                    <option key={c.id} value={index}>{c.name}</option>
+                  )}
+                </select>
+              </div>
             </div>
 
-            <div className='filters-item'>
-              <InputTitle>Carrera</InputTitle>
-              <select id="careers" onChange={props.handleInputChange}>
-              {props.careers.map((c, index) =>
-                <option key={c.id} value={index}>{c.name}</option>
-              )}
-              </select>
-            </div>
-          </div>
-
-          <CourseList
-            data={props.courses}
-            handleCourseSelection={props.handleCourseSelection}
-            selectedCourse={props.selectedCourse}
-          />
+            <CourseList
+              data={props.courses}
+              handleCourseSelection={props.handleCourseSelection}
+              selectedCourse={props.selectedCourse}
+            />
 
           </div>
         </div>
