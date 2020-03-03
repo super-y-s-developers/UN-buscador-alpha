@@ -9,7 +9,6 @@ import Badge from 'components/atoms/Badge';
 
 function CourseCard(props) {
   const { name, typologie, id, credits, favorite, selected } = props;
-  console.log(selected);
 
   const handleFavoriteClick = () => {
     console.log('holi', id);
