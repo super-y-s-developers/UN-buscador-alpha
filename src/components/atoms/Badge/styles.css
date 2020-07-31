@@ -2,11 +2,11 @@
   display: inline-block;
   text-align: center;
   border-radius: 10rem;
-  padding: 0.15em 0.8em;
+  padding: 0.1em 1em;
   white-space: nowrap;
   vertical-align: baseline;
   color: white;
-  font-size: 0.83em;
+  font-size: 0.8em;
   font-weight: bold;
   margin-bottom: 01rem;
 
@@ -20,7 +20,8 @@
 .badge.outlined {
   background-color: transparent !important;
   border: 2px solid var(--gray);
-  color: var(--secondary);
+  color: var(--secondary) ;
+  padding: calc(0.1em - 4px) 1em;
 }
 
 .badge.blue { background-color: var(--blue); }

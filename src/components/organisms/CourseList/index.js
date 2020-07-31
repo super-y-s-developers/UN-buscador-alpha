@@ -16,6 +16,7 @@ function CourseList(props) {
           typologie={d.typologie}
           credits={d.credits}
           onClick={props.handleCourseSelection}
+          selected={props.selectedCourse == d.id}
         />)
       }
 

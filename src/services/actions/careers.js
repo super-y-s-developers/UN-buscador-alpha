@@ -6,7 +6,7 @@ export const fetchCareers = () => async dispatch => {
   careersRef.get().then(snap => {
     const careers = [];
     snap.forEach(s => {
-      careers.push({...s.data(), id: s.id})
+      careers.push({ id: s.id, ...s.data() })
     })
     dispatch({ type: FETCH_CAREERS, careers: careers });
   });

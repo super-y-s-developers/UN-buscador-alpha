@@ -6,8 +6,8 @@ import actions from "services/actions";
 // Organisms
 import CourseList from 'components/organisms/CourseList';
 
-// Templates
-import LeftSidebarDashboard from 'components/templates/LeftSidebarDashboard';
+// Pages
+import Dashboard from 'components/pages/Dashboard';
 
 
 class App extends React.Component {
@@ -20,44 +20,41 @@ class App extends React.Component {
       selectedCourse: null
     }
 
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
     this.handleCourseSelection = this.handleCourseSelection.bind(this);
   }
 
   componentWillMount() {
-    this.props.fetchCourses();
     this.props.fetchCareers();
   }
 
-  handleInputChange(e) {
+  handleFilterChange(e) {
     const value = e.target.value;
     this.setState({
+      selectedCourse: null,
       filters: { career: value }
     });
   }
 
   handleCourseSelection(courseId) {
-    console.log(courseId);
+    const { selectedCourse } = this.state;
     this.setState({
-      selectedCourse: courseId
+      selectedCourse: selectedCourse != courseId ? courseId : null
     });
   }
 
   render() {
-    console.log(this.state.selectedCourse);
     const filteredCourses = this.props.careers.length>0 &&
       Object.values(this.props.careers[this.state.filters.career].courses);
 
     return (
-      <>
-        <LeftSidebarDashboard
-          courses={filteredCourses}
-          careers={this.props.careers}
-          handleInputChange={this.handleInputChange}
-          handleCourseSelection={this.handleCourseSelection}
-          selectedCourse={this.state.selectedCourse}
-        />
-      </>
+      <Dashboard
+        courses={filteredCourses}
+        careers={this.props.careers}
+        handleFilterChange={this.handleFilterChange}
+        handleCourseSelection={this.handleCourseSelection}
+        selectedCourse={this.state.selectedCourse}
+      />
     );
   }
 }
