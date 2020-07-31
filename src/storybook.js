@@ -56,10 +56,6 @@ function Storybook() {
       <h4>Card</h4>
       <Card>Holiiii</Card>
 
-
-
-
-
     </div>
   );
 }
