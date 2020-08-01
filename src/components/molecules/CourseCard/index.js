@@ -4,12 +4,13 @@ import { firstToUpperCase } from 'services/helpers';
 
 import Card from 'components/atoms/Card';
 import Badge from 'components/atoms/Badge';
+import Icon from 'components/atoms/Icon';
 
 function CourseCard(props) {
   const { name, typologie, id, credits, favorite, selected } = props;
 
   const handleFavoriteClick = () => {
-    console.log('holi', id);
+    console.log('handleFavoriteClick', id);
   }
 
   return (
@@ -19,9 +20,10 @@ function CourseCard(props) {
           <p>{firstToUpperCase(name)}</p>
         }
 
-        <i className='icon' onClick={handleFavoriteClick}>
-          favorite{favorite !== true && '_border'}
-        </i>
+        <Icon
+          onClick={handleFavoriteClick}
+          type={`favorite${favorite !== true && '_border'}`}
+        />
       </span>
 
       <span className='card-footer'>
