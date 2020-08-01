@@ -2,8 +2,7 @@ import React from 'react';
 import courses from 'data/courses';
 
 // Atoms
-import Title from 'components/atoms/Title';
-import Subtitle from 'components/atoms/Subtitle';
+import Icon from 'components/atoms/Icon';
 import Badge from 'components/atoms/Badge';
 import Checkbox from 'components/atoms/Checkbox';
 import Searchbox from 'components/atoms/Searchbox';
@@ -31,6 +30,19 @@ function Storybook() {
       <Badge color='indigo'>Indigo</Badge>
       <Badge color='orange'>Orange</Badge>
       <Badge color='teal'>Teal</Badge>
+
+      <h4>Badge</h4>
+      <Icon type='face' />
+      <Icon type='face' color='pink' />
+      <Icon type='face' color='yellow' />
+      <Icon type='face' color='blue' />
+      <Icon type='face' color='green' />
+      <Icon type='face' color='violet' />
+      <Icon type='face' color='red' />
+      <Icon type='face' color='cyan' />
+      <Icon type='face' color='indigo' />
+      <Icon type='face' color='orange' />
+      <Icon type='face' color='teal' />
 
       <h4>Checkbox</h4>
       <Checkbox id='checkbox-1' checked>Solo materias de mi carrera, que no he superado</Checkbox>

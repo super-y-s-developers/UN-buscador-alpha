@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 function Icon(props) {
   return (
-    <StyledIcon>{props.type}</StyledIcon>
+    <StyledIcon {...props}>{props.type}</StyledIcon>
   );
 }
 
