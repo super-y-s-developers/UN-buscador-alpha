@@ -1,22 +1,28 @@
 import colors from './colors';
 
-const jonatanMariaTheme = {
-  colors,
+const darkTheme = {};
 
-  primary: colors.blue,
-  primary_light: colors.light_blue,
-  secondary: colors.charcoal,
-  background: colors.lighter_gray,
+darkTheme.primary = colors.blue;
 
-  base_font_family: 'NunitoSans',
-  base_font_lineheight: '1.5em',
-  base_font_size: '16px',
+darkTheme.background = colors.background[0];
 
-  titles_font_family: 'Nunito',
-  titles_color: colors.navy,
+darkTheme.colors = colors;
 
-  input_placeholder_color: colors.blueish_dark_gray,
-  input_border_color: colors.blueish_gray,
+darkTheme.title = {
+  fontFamily: 'Nunito, Roboto, sans-serif',
+  color: 'white',
 };
 
-export default jonatanMariaTheme;
+darkTheme.text = {
+  lineHeight: '1.5em',
+  color: 'white',
+  fontSize: '16px',
+  fontFamily: 'NunitoSans, Roboto, sans-serif',
+};
+
+darkTheme.input = {
+  placeholderColor: colors.gray[4],
+  borderColor: colors.gray[4],
+};
+
+export default darkTheme;

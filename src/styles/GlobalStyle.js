@@ -8,15 +8,16 @@ const GlobalStyle = createGlobalStyle`${(props) => `
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: white;
   }
 
   body {
-    color: ${props.theme.secondary};
+    color: ${props.theme.text.color};
     background-color: ${props.theme.background};
-    font-family: ${props.theme.base_font_family};
-    font-size: ${props.theme.base_font_size};
+    font-family: ${props.theme.text.fontFamily};
+    font-size: ${props.theme.text.fontSize};
+    line-height: ${props.theme.text.lineHeight};
     font-weight: 400;
-    line-height: ${props.theme.base_font_lineheight};
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
@@ -24,16 +25,17 @@ const GlobalStyle = createGlobalStyle`${(props) => `
   // ---------- TITLES ----------- //
 
   h1, h2, h3, h4, h5, b {
-    font-family: ${props.theme.titles_font_family};
-    color: ${props.theme.title_color};
-    font-weight: bold;
+    font-family: ${props.theme.title.fontFamily};
+    color: ${props.theme.title.color};
+    font-weight: 600;
   }
 
   // ---------- LINKS ----------- //
 
   a {
-    color: ${props.theme.title_color};
+    color: ${props.theme.primary[0]};
     font-weight: 500;
+    text-decoration: underline;
   }
 
   // ---------- FONTS ----------- //
@@ -68,6 +70,14 @@ const GlobalStyle = createGlobalStyle`${(props) => `
     src: local(Nunito-Bold),
       url(/fonts/Nunito-Bold.ttf) format("truetype");
     font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+  }
+  @font-face {
+    font-family: Nunito;
+    src: local(Nunito-ExtraBold),
+      url(/fonts/Nunito-ExtraBold.ttf) format("truetype");
+    font-weight: 700;
     font-style: normal;
     font-stretch: normal;
   }

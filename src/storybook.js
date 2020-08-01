@@ -19,6 +19,20 @@ function Storybook() {
   return (
     <div>
 
+      <h4>Badge</h4>
+      <Badge outlined>Outlined</Badge>
+      <Badge>Default</Badge>
+      <Badge color='pink'>Pink</Badge>
+      <Badge color='yellow'>Yellow</Badge>
+      <Badge color='blue'>Blue</Badge>
+      <Badge color='green'>Green</Badge>
+      <Badge color='violet'>Violet</Badge>
+      <Badge color='red'>Red</Badge>
+      <Badge color='cyan'>Cyan</Badge>
+      <Badge color='indigo'>Indigo</Badge>
+      <Badge color='orange'>Orange</Badge>
+      <Badge color='teal'>Teal</Badge>
+
       <h4>CourseList</h4>
       <CourseList
         data={courses}
