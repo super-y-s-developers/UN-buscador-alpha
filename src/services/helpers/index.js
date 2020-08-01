@@ -1,3 +1,3 @@
 export const firstToUpperCase = (string) => {
-  return string.toLowerCase()[0].toUpperCase() + string.slice(1);
+  return string[0].toUpperCase() + string.slice(1).toLowerCase();
 }
