@@ -1,19 +1,7 @@
-.course-card {
-  cursor: pointer;
-  transition: transform .1s ease-out;
-}
-.course-card:hover {
-  transform: translate(0, -2px);
-}
 .course-card.selected {
   border: 2px solid var(--primary);
   margin-left: -4px;
   margin-top: -4px;
-}
-
-.course-card .card-header  {
-  display: flex;
-  justify-content: space-between;
 }
 .course-card i {
   margin-left: 2em !important;
@@ -21,11 +9,4 @@
   color: var(--primary);
   font-size: 1.5em;
   cursor: pointer;
-}
-.course-card .card-footer  {
-  display: flex;
-  justify-content: space-between;
-}
-.course-card .card-footer .badge  {
-  margin-bottom: 0;
 }

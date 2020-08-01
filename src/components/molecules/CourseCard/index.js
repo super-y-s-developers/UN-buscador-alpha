@@ -3,9 +3,7 @@ import './styles.css';
 import { firstToUpperCase } from 'services/helpers';
 
 import Card from 'components/atoms/Card';
-import Title from 'components/atoms/Title';
 import Badge from 'components/atoms/Badge';
-
 
 function CourseCard(props) {
   const { name, typologie, id, credits, favorite, selected } = props;
@@ -22,24 +20,28 @@ function CourseCard(props) {
         }
 
         <i className='icon' onClick={handleFavoriteClick}>
-        favorite{favorite != true && '_border'}
+          favorite{favorite !== true && '_border'}
         </i>
       </span>
 
-      {typologie &&
-        <Badge color='yellow'>
-          {typeof typologie == 'string' ? typologie : Object.values(typologie)[0]}
-        </Badge>
-      }
-
       <span className='card-footer'>
-        {id &&
-          <Badge outlined>{id}</Badge>
-        }
+        <div>
+          {typologie &&
+            <Badge color='pink'>
+              {typeof typologie === 'string' ? typologie : Object.values(typologie)[0]}
+            </Badge>
+          }
+        </div>
 
-        {credits &&
-          <Badge outlined>{credits} créditos</Badge>
-        }
+        <div>
+          {id &&
+            <Badge>{id}</Badge>
+          }
+
+          {credits &&
+            <Badge>{credits}</Badge>
+          }
+        </div>
       </span>
     </Card>
   );
