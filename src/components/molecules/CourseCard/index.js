@@ -30,7 +30,7 @@ function CourseCard(props) {
         <div>
           {typologie &&
             <Badge color='pink'>
-              {typeof typologie === 'string' ? typologie : Object.values(typologie)[0]}
+              {typeof typologie === 'string' ? typologie[0] : Object.values(typologie)[0][0]}
             </Badge>
           }
         </div>

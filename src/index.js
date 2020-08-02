@@ -24,7 +24,7 @@ ReactDOM.render(
       <ThemeProvider theme={theme}>
         <GlobalStyle />
 
-        <Storybook />
+        <App />
       </ThemeProvider>
     </Provider>
   </React.StrictMode>,
