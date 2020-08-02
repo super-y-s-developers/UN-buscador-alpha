@@ -1,26 +1,23 @@
 import React from 'react';
 import './styles.css';
 
+import Grid from 'components/atoms/Grid';
 import CourseCard from 'components/molecules/CourseCard';
-import Card from 'components/atoms/Card';
 
 function CourseList(props) {
   return (
-    <div className='course-list'>
+    <Grid columns={4}>
 
-      {props.data && props.data.length>0 && props.data.map((d, index) =>
+      {props.data && props.data.length>0 && props.data.map((item, index) =>
         <CourseCard
+          {...item}
           key={`${index}-d.id`}
-          id={d.id}
-          name={d.name}
-          typologie={d.typologie}
-          credits={d.credits}
           onClick={props.handleCourseSelection}
-          selected={props.selectedCourse == d.id}
+          selected={props.selectedCourse == item.id}
         />)
       }
 
-    </div>
+    </Grid>
   );
 }
 

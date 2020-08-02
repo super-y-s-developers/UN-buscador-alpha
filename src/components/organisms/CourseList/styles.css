@@ -1,12 +1,12 @@
 .course-list {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .course-list .card {
-  flex: 0 0 30%;
-  max-width: 30%;
+  /* flex: 0 0 30%; */
+  /* max-width: 30%; */
 }
 .course-list>.card:not(:nth-child(3n)) {
-  margin-right: 5%;
+  /* margin-right: 2em; */
 }
