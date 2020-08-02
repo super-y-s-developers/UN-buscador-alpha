@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const Badge = styled.span`
   display: inline-block;
   box-sizing: border-box;
-  font-size: 0.88rem;
-  padding: 0.29em 1em;
+  font-size: 0.85rem;
+  padding: 0.25em 1em;
   border-radius: 10rem;
   color: white;
   margin: 0;
@@ -16,7 +16,7 @@ const Badge = styled.span`
   `:`
     background-color: ${getColor(props)};
     font-weight: bold;
-    opacity: 0.8;
+    opacity: 0.75;
   `}
 `
 
