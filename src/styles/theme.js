@@ -21,8 +21,8 @@ darkTheme.text = {
 };
 
 darkTheme.input = {
-  placeholderColor: colors.gray[4],
-  borderColor: colors.gray[4],
+  placeholderColor: 'rgba(255, 255, 255, 50%)',
+  borderColor: 'transparent',
 };
 
 export default darkTheme;

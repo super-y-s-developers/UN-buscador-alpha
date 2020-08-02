@@ -1,15 +1,17 @@
 import React from 'react';
-import courses from 'data/courses';
 
 // Atoms
 import Icon from 'components/atoms/Icon';
 import Badge from 'components/atoms/Badge';
-import Checkbox from 'components/atoms/Checkbox';
-import Searchbox from 'components/atoms/Searchbox';
+import Input from 'components/atoms/Input';
 import Card from 'components/atoms/Card';
 
 // Molecules
 import CourseCard from 'components/molecules/CourseCard';
+
+// Data
+import courses from 'dummy/courses';
+import campus from 'dummy/campus';
 
 function Storybook() {
   return (
@@ -31,7 +33,7 @@ function Storybook() {
       <Badge color='orange'>Orange</Badge>
       <Badge color='teal'>Teal</Badge>
 
-      <h4>Badge</h4>
+      <h4>Icon</h4>
       <Icon type='face' />
       <Icon type='face' color='pink' />
       <Icon type='face' color='yellow' />
@@ -44,13 +46,24 @@ function Storybook() {
       <Icon type='face' color='orange' />
       <Icon type='face' color='teal' />
 
-      <h4>Checkbox</h4>
-      <Checkbox id='checkbox-1' checked>Solo materias de mi carrera, que no he superado</Checkbox>
-      <Checkbox id='checkbox-2'>Solo que puedo ver</Checkbox>
+      <h4>Input</h4>
+      <Input
+        placeholder='Default Input'
+      />
+      <br /><br />
+      <Input
+        type='select'
+        placeholder='Sede'
+        options={campus}
+      />
+      <br /><br />
+      <Input
+        icon='search'
+        type='search'
+        placeholder='Buscar por nombre o código ...'
+      />
 
-      <h4>Searchbox</h4>
-      <Searchbox id='searchbox-1'>Solo materias que puedo ver</Searchbox>
-
+      <br /><br /><br /><br />
       <h1>MOLECULES</h1><br />
 
       <h4>CourseCard</h4>
