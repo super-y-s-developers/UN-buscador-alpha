@@ -6,8 +6,13 @@ import Card from 'components/atoms/Card';
 import Badge from 'components/atoms/Badge';
 import Icon from 'components/atoms/Icon';
 
+// dummy
+import { typologyMapping, typologies } from 'dummy/typologies'
+
 function CourseCard(props) {
-  const { name, typologie, id, credits, favorite, selected } = props;
+  const { name, typologie, id, credits, favorite, selected } = props
+  const tempTypo = typeof typologie === 'string' ? typologie : Object.values(typologie)[0]
+  const typoId = typologyMapping[tempTypo] ? typologyMapping[tempTypo] : 'LE'
 
   const handleFavoriteClick = () => {
     console.log('handleFavoriteClick', id);
@@ -15,7 +20,7 @@ function CourseCard(props) {
 
   return (
     <Card className={`course-card ${selected && 'selected'}`} onClick={() => props.onClick(id)}>
-      <span className='card-header'>
+      <div className='card-header'>
         {name &&
           <p>{firstToUpperCase(name)}</p>
         }
@@ -24,27 +29,19 @@ function CourseCard(props) {
           onClick={handleFavoriteClick}
           type={`favorite${favorite !== true && '_border'}`}
         />
-      </span>
+    </div>
 
-      <span className='card-footer'>
-        <div>
-          {typologie &&
-            <Badge color='pink'>
-              {typeof typologie === 'string' ? typologie[0] : Object.values(typologie)[0][0]}
-            </Badge>
-          }
-        </div>
+      <div className='card-footer'>
+        {typologie &&
+          <Badge color={typologies[typoId].color}>{typoId}</Badge>
+        }
 
         <div>
-          {id &&
-            <Badge>{id}</Badge>
-          }
+          {id && <Badge>{id}</Badge>}
 
-          {credits &&
-            <Badge>{credits}</Badge>
-          }
+          {credits && <Badge>{credits}</Badge>}
         </div>
-      </span>
+      </div>
     </Card>
   );
 }

@@ -38,7 +38,7 @@ const StyledSelect = styled(Select)`
     -moz-appearance: none;
 
     option {
-      color: ${(props) => props.theme.secondary};
+      background: ${(props) => props.theme.background};
       &.placeholder {
         // color: ${(props) => props.theme.titles_color};
         // font-family: ${(props) => props.theme.titles_font_family};

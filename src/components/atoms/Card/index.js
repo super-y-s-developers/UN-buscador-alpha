@@ -12,8 +12,6 @@ function Card(props) {
 }
 
 const StyledCard = styled.div`
-  border: none;
-  margin-bottom: 24px;
   border-radius: .45rem;
   background-color: rgba(255, 255, 255, 5%);
   cursor: pointer;
@@ -27,16 +25,18 @@ const StyledCard = styled.div`
   }
 
   .card-body {
-    min-height: 1px;
+    height: calc(100% - 2.26em);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 1.13em 1.63em;
-
-    p {
-      margin-top: 0;
-    }
 
     .card-header  {
       display: flex;
       justify-content: space-between;
+      p {
+        margin-top: 0;
+      }
     }
 
     .card-footer  {

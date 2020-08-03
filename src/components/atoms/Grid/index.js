@@ -12,7 +12,7 @@ const Grid = styled.div`${(props) => {
     & > * {
       width: ${columnWidth};
       ${!noMargins && `
-        margin-bottom: 0.8em;
+        margin-bottom: 1em;
         &:not(:nth-child(${columns}n)) {
           margin-right: 1em;
         }

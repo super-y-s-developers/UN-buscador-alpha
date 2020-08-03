@@ -6,7 +6,7 @@ import CourseCard from 'components/molecules/CourseCard';
 
 function CourseList(props) {
   return (
-    <Grid columns={4}>
+    <Grid columns={3}>
 
       {props.data && props.data.length>0 && props.data.map((item, index) =>
         <CourseCard

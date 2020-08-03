@@ -1,7 +1,7 @@
 import React from 'react';
-import courses from 'data/courses';
 import { connect } from "react-redux";
 import actions from "services/actions";
+import courses from 'dummy/courses';
 
 // Organisms
 import CourseList from 'components/organisms/CourseList';
