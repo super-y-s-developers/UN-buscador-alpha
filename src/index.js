@@ -4,21 +4,29 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import reducers from 'services/reducers';
-import './components/_settings/_base.css';
+import { ThemeProvider } from 'styled-components';
 
 // Pages
 import App from './App';
 import Storybook from './storybook';
+
+// GlobalStyle
+import theme from 'styles/theme';
+import GlobalStyle from 'styles/GlobalStyle';
 
 // Redux store
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+
+        <Storybook />
+      </ThemeProvider>
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
-
-// ReactDOM.render(<Storybook />, document.getElementById('root'));

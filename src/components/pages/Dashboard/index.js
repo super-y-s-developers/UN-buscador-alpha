@@ -2,10 +2,7 @@ import React from 'react';
 import './styles.css';
 
 // Atoms
-import InputTitle from 'components/atoms/InputTitle';
-import Searchbox from 'components/atoms/Searchbox';
-import Title from 'components/atoms/Title';
-import Subtitle from 'components/atoms/Subtitle';
+import Input from 'components/atoms/Input';
 import Loader from 'components/atoms/Loader';
 import Icon from 'components/atoms/Icon';
 
@@ -36,12 +33,12 @@ function Dashboard(props) {
 
           {props.selectedCourse != null ?
             <>
-              <Title>{selectedCourseData.name}</Title>
-              <Subtitle>Descripción:</Subtitle>
+              <h2>{selectedCourseData.name}</h2>
+              <h4>Descripción:</h4>
               <p>{selectedCourseData.description.split('.').slice(0,2).join('. ')}.</p>
             </>
             :
-            <Title>Selecciona un curso de la lista para ver los horarios y detalles aquí</Title>
+            <h4>Selecciona un curso de la lista para ver los horarios y detalles aquí</h4>
           }
 
           </div>
@@ -50,11 +47,6 @@ function Dashboard(props) {
 
         <div className='content'>
           <div className='content-body'>
-            <h1>
-              <Icon type='search' color='primary' />
-              UN Buscador
-            </h1>
-
             <div className='filters'>
               {
                 // <div className='filters-item'>
@@ -63,14 +55,13 @@ function Dashboard(props) {
                 // </div>
               }
 
-              <div className='filters-item'>
-                <InputTitle>Filtrar por carrera</InputTitle>
-                <select id="careers" onChange={props.handleFilterChange}>
-                  {props.careers.map((c, index) =>
-                    <option key={c.id} value={index}>{c.name}</option>
-                  )}
-                </select>
-              </div>
+              <Input
+                id="careers"
+                type='select'
+                label='Carrera'
+                options={props.careers.map((c, index) => ({ text: c.name, value: index }))}
+                onChange={props.handleFilterChange}
+              />
             </div>
 
             <CourseList

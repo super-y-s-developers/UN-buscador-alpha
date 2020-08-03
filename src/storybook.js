@@ -1,12 +1,10 @@
 import React from 'react';
-import courses from 'data/courses';
 
 // Atoms
-import Title from 'components/atoms/Title';
-import Subtitle from 'components/atoms/Subtitle';
+import Icon from 'components/atoms/Icon';
+import Button from 'components/atoms/Button';
 import Badge from 'components/atoms/Badge';
-import Checkbox from 'components/atoms/Checkbox';
-import Searchbox from 'components/atoms/Searchbox';
+import Input from 'components/atoms/Input';
 import Card from 'components/atoms/Card';
 
 // Molecules
@@ -15,50 +13,90 @@ import CourseCard from 'components/molecules/CourseCard';
 // Organisms
 import CourseList from 'components/organisms/CourseList';
 
+// Data
+import courses from 'dummy/courses';
+import campus from 'dummy/campus';
+
 function Storybook() {
   return (
     <div>
 
-      <h4>CourseList</h4>
-      <CourseList
-        data={courses}
+      <h1>ATOMS</h1><br />
+
+      <h4>Badge</h4>
+      <Badge outlined>Outlined</Badge>
+      <Badge>Default</Badge>
+      <Badge color='pink'>Pink</Badge>
+      <Badge color='yellow'>Yellow</Badge>
+      <Badge color='blue'>Blue</Badge>
+      <Badge color='green'>Green</Badge>
+      <Badge color='violet'>Violet</Badge>
+      <Badge color='red'>Red</Badge>
+      <Badge color='cyan'>Cyan</Badge>
+      <Badge color='indigo'>Indigo</Badge>
+      <Badge color='orange'>Orange</Badge>
+      <Badge color='teal'>Teal</Badge>
+
+      <h4>Icon</h4>
+      <Icon type='face' />
+      <Icon type='face' color='pink' />
+      <Icon type='face' color='yellow' />
+      <Icon type='face' color='blue' />
+      <Icon type='face' color='green' />
+      <Icon type='face' color='violet' />
+      <Icon type='face' color='red' />
+      <Icon type='face' color='cyan' />
+      <Icon type='face' color='indigo' />
+      <Icon type='face' color='orange' />
+      <Icon type='face' color='teal' />
+
+      <h4>Button</h4>
+      <Button outlined>Outlined</Button>
+      <Button>Default</Button>
+      <Button color='pink'>Pink</Button>
+      <Button color='yellow'>Yellow</Button>
+      <Button color='blue'>Blue</Button>
+      <Button color='green'>Green</Button>
+      <Button color='violet'>Violet</Button>
+      <Button color='red'>Red</Button>
+      <Button color='cyan'>Cyan</Button>
+      <Button color='indigo'>Indigo</Button>
+      <Button color='orange'>Orange</Button>
+      <Button color='teal'>Teal</Button>
+
+      <h4>Input</h4>
+      <Input
+        placeholder='Default Input'
       />
+      <br /><br />
+      <Input
+        type='select'
+        placeholder='Sede'
+        options={campus}
+      />
+      <br /><br />
+      <Input
+        icon='search'
+        type='search'
+        placeholder='Buscar por nombre o código ...'
+      />
+
+      <br /><br /><br /><br />
+      <h1>MOLECULES</h1><br />
 
       <h4>CourseCard</h4>
       <CourseCard
         id='2024481'
-        name='Nuevos y viejos conflictos en el orden internacional tras el fin de la guerra'
-        typologie='LIBRE ELLECCION'
+        name='Taller de énfasis en multimedia e imagen digital'
+        typologie='LE'
         credits={3}
       />
 
-      <h4>Paragraph:</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis mauris quis quam pellentesque cursus. Donec vel viverra ex. Integer porttitor eget arcu sit amet suscipit. In gravida rhoncus urna, vel interdum nunc commodo vitae. Nunc ullamcorper lacus id tellus ultrices, at rhoncus nunc dignissim. Nam ultricies eros dui, eget posuere sem malesuada et. Curabitur justo dui, fermentum at velit at, scelerisque sollicitudin elit. Suspendisse vulputate imperdiet urna, facilisis pharetra turpis elementum sed. Integer ex odio, imperdiet eget risus sit amet, fermentum porttitor lorem. Sed nec felis magna. Donec et purus nisi. Donec vel nibh leo.</p>
+      <br /><br /><br /><br />
+      <h1>ORGANISMS</h1><br />
 
-      <h4>Title</h4>
-      <Title>What the</Title>
-
-      <h4>Subtitle</h4>
-      <Subtitle>What the</Subtitle>
-
-      <h4>Badge</h4>
-      <Badge color='yellow'>Libre elección - L</Badge>
-      <Badge outlined>2024481</Badge>
-      <Badge outlined color='pink'>What the</Badge>
-
-      <h4>Checkbox</h4>
-      <Checkbox id='checkbox-1' checked>Solo materias de mi carrera, que no he superado</Checkbox>
-      <Checkbox id='checkbox-2'>Solo materias de mi carrera, que no he superado</Checkbox>
-
-      <h4>Searchbox</h4>
-      <Searchbox id='searchbox-1'>Solo materias de mi carrera, que no he superado</Searchbox>
-
-      <h4>Card</h4>
-      <Card>Holiiii</Card>
-
-
-
-
+      <h4>CourseList</h4>
+      <CourseList data={courses} />
 
     </div>
   );
