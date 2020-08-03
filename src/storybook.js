@@ -2,12 +2,16 @@ import React from 'react';
 
 // Atoms
 import Icon from 'components/atoms/Icon';
+import Button from 'components/atoms/Button';
 import Badge from 'components/atoms/Badge';
 import Input from 'components/atoms/Input';
 import Card from 'components/atoms/Card';
 
 // Molecules
 import CourseCard from 'components/molecules/CourseCard';
+
+// Organisms
+import CourseList from 'components/organisms/CourseList';
 
 // Data
 import courses from 'dummy/courses';
@@ -46,6 +50,20 @@ function Storybook() {
       <Icon type='face' color='orange' />
       <Icon type='face' color='teal' />
 
+      <h4>Button</h4>
+      <Button outlined>Outlined</Button>
+      <Button>Default</Button>
+      <Button color='pink'>Pink</Button>
+      <Button color='yellow'>Yellow</Button>
+      <Button color='blue'>Blue</Button>
+      <Button color='green'>Green</Button>
+      <Button color='violet'>Violet</Button>
+      <Button color='red'>Red</Button>
+      <Button color='cyan'>Cyan</Button>
+      <Button color='indigo'>Indigo</Button>
+      <Button color='orange'>Orange</Button>
+      <Button color='teal'>Teal</Button>
+
       <h4>Input</h4>
       <Input
         placeholder='Default Input'
@@ -73,6 +91,12 @@ function Storybook() {
         typologie='LE'
         credits={3}
       />
+
+      <br /><br /><br /><br />
+      <h1>ORGANISMS</h1><br />
+
+      <h4>CourseList</h4>
+      <CourseList data={courses} />
 
     </div>
   );

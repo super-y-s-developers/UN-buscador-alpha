@@ -36,6 +36,7 @@ const StyledCard = styled.div`
       justify-content: space-between;
       p {
         margin-top: 0;
+        font-weight: bold;
       }
     }
 

@@ -24,11 +24,9 @@ ReactDOM.render(
       <ThemeProvider theme={theme}>
         <GlobalStyle />
 
-        <App />
+        <Storybook />
       </ThemeProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// ReactDOM.render(<Storybook />, document.getElementById('root'));
