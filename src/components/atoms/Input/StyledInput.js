@@ -10,7 +10,8 @@ const StyledInput = styled.input`
   outline: none;
   width: 100%;
 
-  input& {
+  input&,
+  textarea& {
     width: calc(100% - 1.6em);
   }
 

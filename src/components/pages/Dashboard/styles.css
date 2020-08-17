@@ -35,23 +35,3 @@
 .dashboard .content h1 {
   text-align: center;
 }
-
-
-/* Filters organism */
-.filters {
-  display: flex;
-  margin-bottom: 2em;
-}
-.filters-item {
-  margin-right: 2em;
-}
-
-select {
-  background-color: transparent;
-  color: var(--secondary);
-  font-family: var(--base-font-family);
-  border: none;
-}
-select:focus {
-  outline:none;
-}

@@ -1,22 +1,24 @@
-import React from 'react';
-import './styles.css';
+import React from 'react'
+import styled from 'styled-components'
+import './styles.css'
 
 // Atoms
-import Input from 'components/atoms/Input';
-import Loader from 'components/atoms/Loader';
-import Icon from 'components/atoms/Icon';
+import Button from 'components/atoms/Button'
+import Input from 'components/atoms/Input'
+import Loader from 'components/atoms/Loader'
+import Grid from 'components/atoms/Grid'
 
 // Organisms
-import CourseList from 'components/organisms/CourseList';
+import CourseList from 'components/organisms/CourseList'
 
 
 function Dashboard(props) {
-  const selectedCourseData = props.courses && props.courses.filter(c => c.id == props.selectedCourse)[0];
+  const selectedCourseData = props.courses &&
+    props.courses.filter(c => c.id == props.selectedCourse)[0]
 
   return (
     <div className={`dashboard ${!props.courses ? 'loading' : ''}`}>
       {!props.courses ?
-
         <Loader />
 
         :
@@ -24,13 +26,6 @@ function Dashboard(props) {
         <>
         <div className='sidebar'>
           <div className='sidebar-body'>
-          {
-            // <div className='buttons'>
-            //   <button className='button'>Filtros</button>
-            //   <button className='button'>Detalle del curso</button>
-            // </div>
-          }
-
           {props.selectedCourse != null ?
             <>
               <h2>{selectedCourseData.name}</h2>
@@ -40,29 +35,28 @@ function Dashboard(props) {
             :
             <h4>Selecciona un curso de la lista para ver los horarios y detalles aquí</h4>
           }
-
           </div>
         </div>
 
 
         <div className='content'>
           <div className='content-body'>
-            <div className='filters'>
-              {
-                // <div className='filters-item'>
-                //   <InputTitle>Busca por nombre o código</InputTitle>
-                //   <Searchbox id='searchbox'></Searchbox>
-                // </div>
-              }
-
+            <Filters columns={3}>
+              <Input
+                id='searchbar'
+                icon='search'
+                placeholder='Buscar por código o nombre ...'
+              />
               <Input
                 id="careers"
                 type='select'
-                label='Carrera'
+                // label='Carrera'
                 options={props.careers.map((c, index) => ({ text: c.name, value: index }))}
                 onChange={props.handleFilterChange}
               />
-            </div>
+            </Filters>
+
+            <p>{props.courses.length} resultados con tu búsqueda</p>
 
             <CourseList
               data={props.courses}
@@ -75,7 +69,11 @@ function Dashboard(props) {
         </>
       }
     </div>
-  );
+  )
 }
 
-export default Dashboard;
+const Filters = styled(Grid)`
+  margin-bottom: 2em;
+`
+
+export default Dashboard
