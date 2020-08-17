@@ -16,7 +16,7 @@ const Badge = styled.span`
   `:`
     background-color: ${getColor(props)};
     font-weight: bold;
-    opacity: 0.75;
+    opacity: 0.8;
   `}
 `
 

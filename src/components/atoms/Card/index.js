@@ -16,6 +16,7 @@ const StyledCard = styled.div`
   background-color: rgba(255, 255, 255, 5%);
   cursor: pointer;
   transition: transform .1s ease-out;
+  ${props => getColor(props)}
 
   box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.08);
   -webkit-box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.08);
@@ -36,7 +37,6 @@ const StyledCard = styled.div`
       justify-content: space-between;
       p {
         margin-top: 0;
-        font-weight: bold;
       }
     }
 
@@ -50,5 +50,12 @@ const StyledCard = styled.div`
     }
   }
 `
+
+function getColor(props) {
+  const { color, theme } = props
+  if(color && theme.colors[color])
+    return `border-top: 2px solid ${theme.colors[color]};`
+  else return ''
+}
 
 export default Card;

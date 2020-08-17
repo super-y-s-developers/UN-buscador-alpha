@@ -13,16 +13,21 @@ function CourseCard(props) {
   const { name, typologie, id, credits, favorite, selected } = props
   const tempTypo = typeof typologie === 'string' ? typologie : Object.values(typologie)[0]
   const typoId = typologyMapping[tempTypo] ? typologyMapping[tempTypo] : 'LE'
+  const unwantedText = 'la asignatura no tiene grupos de matrícula activos'
 
   const handleFavoriteClick = () => {
     console.log('handleFavoriteClick', id);
   }
 
   return (
-    <Card className={`course-card ${selected && 'selected'}`} onClick={() => props.onClick(id)}>
+    <Card
+      className={`course-card ${selected && 'selected'}`}
+      color={typologies[typoId].color}
+      onClick={() => props.onClick(id)}
+    >
       <div className='card-header'>
         {name &&
-          <p>{firstToUpperCase(name)}</p>
+          <p>{firstToUpperCase(name).replace(unwantedText,'')}</p>
         }
 
         <Icon
@@ -33,7 +38,8 @@ function CourseCard(props) {
 
       <div className='card-footer'>
         {typologie &&
-          <Badge color={typologies[typoId].color}>{typoId}</Badge>
+          <Badge>{typoId}</Badge>
+          // <Badge color={typologies[typoId].color}>{typoId}</Badge>
         }
 
         <div>

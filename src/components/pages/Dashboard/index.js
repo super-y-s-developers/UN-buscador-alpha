@@ -43,11 +43,6 @@ function Dashboard(props) {
           <div className='content-body'>
             <Filters columns={3}>
               <Input
-                id='searchbar'
-                icon='search'
-                placeholder='Buscar por código o nombre ...'
-              />
-              <Input
                 id="careers"
                 type='select'
                 // label='Carrera'
