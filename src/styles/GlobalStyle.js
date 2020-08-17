@@ -24,6 +24,12 @@ const GlobalStyle = createGlobalStyle`${(props) => `
     overflow-x: hidden;
   }
 
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
   // ---------- TITLES ----------- //
 
   h1, h2, h3, h4, h5, b {

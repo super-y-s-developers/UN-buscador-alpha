@@ -36,6 +36,7 @@ const StyledSelect = styled(Select)`
     padding-right: 2.4em;
     appearance: none;
     -moz-appearance: none;
+    color: ${(props) => props.theme.text.color};
 
     option {
       background: ${(props) => props.theme.background};

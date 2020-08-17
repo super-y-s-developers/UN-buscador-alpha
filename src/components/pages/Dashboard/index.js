@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { firstToUpperCase } from 'services/helpers'
 import './styles.css'
 
 // Atoms
@@ -41,12 +42,12 @@ function Dashboard(props) {
 
         <div className='content'>
           <div className='content-body'>
-            <Filters columns={3}>
+            <Filters columns={1}>
               <Input
                 id="careers"
                 type='select'
                 // label='Carrera'
-                options={props.careers.map((c, index) => ({ text: c.name, value: index }))}
+                options={props.careers.map((c, index) => ({ text: firstToUpperCase(c.name), value: index }))}
                 onChange={props.handleFilterChange}
               />
             </Filters>

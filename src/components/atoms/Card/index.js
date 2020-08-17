@@ -16,23 +16,29 @@ const StyledCard = styled.div`
   background-color: rgba(255, 255, 255, 5%);
   cursor: pointer;
   transition: transform .1s ease-out;
-  ${props => getColor(props)}
+  border: 1px solid rgba(255, 255, 255, 5%);
+  border-left: 2px solid ${props => getColor(props)};
 
   box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.08);
   -webkit-box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.08);
+
+  ${props => props.selected && `
+    border: 2px solid ${getColor(props)};
+    margin-top: -4px;
+  `}
 
   &:hover {
     transform: translate(0, -2px);
   }
 
   .card-body {
-    height: calc(100% - 2.26em);
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1.13em 1.63em;
+    padding: 1em 1.5em;
 
-    .card-header  {
+    .card-header {
       display: flex;
       justify-content: space-between;
       p {
@@ -43,6 +49,7 @@ const StyledCard = styled.div`
     .card-footer  {
       display: flex;
       justify-content: space-between;
+      bottom: 0;
 
       *:not(:last-child) {
         margin-right: 1em;
@@ -53,8 +60,7 @@ const StyledCard = styled.div`
 
 function getColor(props) {
   const { color, theme } = props
-  if(color && theme.colors[color])
-    return `border-top: 2px solid ${theme.colors[color]};`
+  if(color && theme.colors[color]) return theme.colors[color]
   else return ''
 }
 

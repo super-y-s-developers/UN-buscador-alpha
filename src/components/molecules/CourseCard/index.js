@@ -21,9 +21,10 @@ function CourseCard(props) {
 
   return (
     <Card
-      className={`course-card ${selected && 'selected'}`}
+      className='course-card'
       color={typologies[typoId].color}
       onClick={() => props.onClick(id)}
+      selected={selected}
     >
       <div className='card-header'>
         {name &&
